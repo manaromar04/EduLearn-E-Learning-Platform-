@@ -41,195 +41,136 @@
         </div>
     </nav>
 
-    <!-- Dashboard Header -->
-    <section class="py-5 mt-5">
-        <div class="container">
-            <div class="row align-items-center mb-4">
-                <div class="col-md-6">
-                    <h1 class="display-4 fw-bold">Welcome, Student!</h1>
-                    <p class="lead">Track your progress and continue learning</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown">
-                            <i class="fas fa-user-circle me-2"></i>My Profile
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Profile Settings</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Preferences</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
-                        </ul>
+    <!-- Dashboard Content -->
+    <div class="container mt-5 pt-5">
+        <!-- Welcome Section -->
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <h2>Welcome back, <span id="studentName">Student</span>!</h2>
+                <p class="text-muted">Continue your learning journey</p>
+            </div>
+            <div class="col-md-4 text-end">
+                <div class="card bg-primary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Your Points</h5>
+                        <h2 class="mb-0">1,250</h2>
+                        <small>Level 3</small>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Dashboard Stats -->
-            <div class="row mb-4">
-                <div class="col-md-3">
-                    <div class="card bg-primary text-white">
-                        <div class="card-body">
-                            <h5 class="card-title">Courses Enrolled</h5>
-                            <h2 class="card-text">3</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card bg-success text-white">
-                        <div class="card-body">
-                            <h5 class="card-title">Completed</h5>
-                            <h2 class="card-text">1</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card bg-warning text-white">
-                        <div class="card-body">
-                            <h5 class="card-title">In Progress</h5>
-                            <h2 class="card-text">2</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card bg-info text-white">
-                        <div class="card-body">
-                            <h5 class="card-title">Certificates</h5>
-                            <h2 class="card-text">1</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Current Courses -->
-            <div class="row mb-4">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">My Courses</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Course</th>
-                                            <th>Progress</th>
-                                            <th>Last Accessed</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Web Development</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" style="width: 75%">75%</div>
-                                                </div>
-                                            </td>
-                                            <td>2 days ago</td>
-                                            <td>
-                                                <a href="#" class="btn btn-sm btn-primary">Continue</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Data Science</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" style="width: 45%">45%</div>
-                                                </div>
-                                            </td>
-                                            <td>1 week ago</td>
-                                            <td>
-                                                <a href="#" class="btn btn-sm btn-primary">Continue</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Digital Marketing</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" style="width: 100%">100%</div>
-                                                </div>
-                                            </td>
-                                            <td>3 days ago</td>
-                                            <td>
-                                                <a href="#" class="btn btn-sm btn-success">View Certificate</a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Course Progress -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Course Progress</h5>
+                        <div class="progress mb-3">
+                            <div class="progress-bar" role="progressbar" style="width: 75%" data-progress="75">
+                                <span class="progress-text">75% Complete</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Upcoming Assignments -->
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">Upcoming Assignments</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="list-group">
-                                <a href="#" class="list-group-item list-group-item-action">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-1">Web Development Project</h6>
-                                        <small>Due in 3 days</small>
-                                    </div>
-                                    <p class="mb-1">Create a responsive website using HTML, CSS, and JavaScript</p>
-                                </a>
-                                <a href="#" class="list-group-item list-group-item-action">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-1">Data Analysis Report</h6>
-                                        <small>Due in 1 week</small>
-                                    </div>
-                                    <p class="mb-1">Analyze the provided dataset and create a comprehensive report</p>
-                                </a>
-                            </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>Web Development</span>
+                            <a href="#" class="btn btn-primary btn-sm">Continue Learning</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Recent Activity -->
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">Recent Activity</h5>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Recent Activity</h5>
+                        <div class="list-group">
+                            <div class="list-group-item">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/Course Progress Visualization.png" alt="Progress" class="me-3" style="width: 40px; height: 40px;">
+                                    <div>
+                                        <h6 class="mb-0">Completed Module 3: JavaScript Basics</h6>
+                                        <small class="text-muted">2 hours ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/Learning Achievement Badge.jpeg" alt="Achievement" class="me-3" style="width: 40px; height: 40px;">
+                                    <div>
+                                        <h6 class="mb-0">Earned Achievement: Code Master</h6>
+                                        <small class="text-muted">1 day ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/Course Module Icon.jpeg" alt="Module" class="me-3" style="width: 40px; height: 40px;">
+                                    <div>
+                                        <h6 class="mb-0">Started Module 4: Advanced CSS</h6>
+                                        <small class="text-muted">2 days ago</small>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <div class="list-group">
-                                <a href="#" class="list-group-item list-group-item-action">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-1">Completed Module 5</h6>
-                                        <small>2 hours ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <!-- Upcoming Assignments -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Upcoming Assignments</h5>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0">Project Submission</h6>
+                                        <small class="text-muted">Due in 3 days</small>
                                     </div>
-                                    <p class="mb-1">Advanced JavaScript Concepts</p>
-                                </a>
-                                <a href="#" class="list-group-item list-group-item-action">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-1">Submitted Assignment</h6>
-                                        <small>1 day ago</small>
+                                    <span class="badge bg-primary">Web Dev</span>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0">Quiz: JavaScript Basics</h6>
+                                        <small class="text-muted">Due in 5 days</small>
                                     </div>
-                                    <p class="mb-1">Digital Marketing Strategy</p>
-                                </a>
-                                <a href="#" class="list-group-item list-group-item-action">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-1">Earned Certificate</h6>
-                                        <small>3 days ago</small>
-                                    </div>
-                                    <p class="mb-1">Digital Marketing Fundamentals</p>
-                                </a>
+                                    <span class="badge bg-primary">Web Dev</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Your Achievements</h5>
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <img src="images/Learning Achievement Badge.jpeg" alt="Achievement" class="img-fluid mb-2" style="width: 60px; height: 60px;">
+                                <h6 class="mb-0">5</h6>
+                                <small class="text-muted">Achievements</small>
+                            </div>
+                            <div class="col-4">
+                                <img src="images/Course Progress Visualization.png" alt="Progress" class="img-fluid mb-2" style="width: 60px; height: 60px;">
+                                <h6 class="mb-0">3</h6>
+                                <small class="text-muted">Badges</small>
+                            </div>
+                            <div class="col-4">
+                                <img src="images/Course Module Icon.jpeg" alt="Module" class="img-fluid mb-2" style="width: 60px; height: 60px;">
+                                <h6 class="mb-0">2</h6>
+                                <small class="text-muted">Certificates</small>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="bg-dark text-white py-4 mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
