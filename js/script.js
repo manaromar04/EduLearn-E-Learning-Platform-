@@ -199,4 +199,151 @@ function validateField(field) {
 const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
 tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl);
+});
+
+// Form validation
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all forms that need validation
+    const forms = document.querySelectorAll('.needs-validation');
+    
+    // Loop over forms and prevent submission
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        }, false);
+    });
+
+    // Handle course enrollment
+    const enrollmentForm = document.getElementById('enrollmentForm');
+    if (enrollmentForm) {
+        enrollmentForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const studentName = document.getElementById('studentName').value;
+            const studentEmail = document.getElementById('studentEmail').value;
+            const paymentMethod = document.getElementById('paymentMethod').value;
+
+            // Store student name in localStorage
+            localStorage.setItem('studentName', studentName);
+
+            // Show success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'alert alert-success mt-3';
+            successMessage.innerHTML = `
+                <h4 class="alert-heading">Thank you for enrolling!</h4>
+                <p>We've sent a confirmation email to ${studentEmail} with your course details and payment instructions.</p>
+                <hr>
+                <p class="mb-0">You will be redirected to your dashboard shortly...</p>
+            `;
+            
+            // Replace form with success message
+            enrollmentForm.parentNode.replaceChild(successMessage, enrollmentForm);
+
+            // Redirect to dashboard after 3 seconds
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 3000);
+        });
+    }
+
+    // Handle contact form submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Show success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'alert alert-success mt-3';
+            successMessage.innerHTML = `
+                <h4 class="alert-heading">Thank you for your message!</h4>
+                <p>We have received your message and will get back to you shortly.</p>
+                <hr>
+                <p class="mb-0">You will be redirected to the home page...</p>
+            `;
+            
+            // Replace form with success message
+            contactForm.parentNode.replaceChild(successMessage, contactForm);
+
+            // Redirect to home page after 3 seconds
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 3000);
+        });
+    }
+
+    // Display student name in dashboard
+    const studentNameElement = document.getElementById('studentName');
+    if (studentNameElement) {
+        const storedName = localStorage.getItem('studentName');
+        if (storedName) {
+            studentNameElement.textContent = storedName;
+        }
+    }
+
+    // Handle dashboard course progress
+    const progressBars = document.querySelectorAll('.progress-bar');
+    if (progressBars.length > 0) {
+        progressBars.forEach(bar => {
+            const progress = bar.getAttribute('data-progress');
+            bar.style.width = '0%';
+            setTimeout(() => {
+                bar.style.width = progress + '%';
+            }, 500);
+        });
+    }
+
+    // Handle course video playback
+    const videoButtons = document.querySelectorAll('.video-button');
+    if (videoButtons.length > 0) {
+        videoButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const videoId = this.getAttribute('data-video-id');
+                // Here you would typically handle video playback
+                // For now, we'll just show an alert
+                alert('Video playback functionality will be implemented in the full version.');
+            });
+        });
+    }
+
+    // Handle quick action buttons
+    const quickActionButtons = document.querySelectorAll('.btn-outline-primary');
+    quickActionButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const action = this.getAttribute('onclick');
+            if (action) {
+                eval(action);
+            }
+        });
+    });
+});
+
+// Add smooth scrolling to all links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Add active class to current navigation item
+const currentLocation = window.location.pathname;
+document.querySelectorAll('.nav-link').forEach(link => {
+    if (link.getAttribute('href') === currentLocation.split('/').pop()) {
+        link.classList.add('active');
+    }
 }); 
