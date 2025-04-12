@@ -33,8 +33,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    <li class="nav-item" id="nav-auth-container">
+                        <!-- JS will inject login or dashboard here -->
                     </li>
                 </ul>
             </div>
@@ -89,7 +89,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card text-center">
                         <div class="team-image-container">
-                            <img src="images/team member 1.jpeg" class="card-img-top team-image" alt="Team Member 1">
+                            <img src="images/John Doe.jpeg" class="card-img-top team-image" alt="John Doe">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">John Doe</h5>
@@ -100,7 +100,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card text-center">
                         <div class="team-image-container">
-                            <img src="images/team member 2.jpeg" class="card-img-top team-image" alt="Team Member 2">
+                            <img src="images/Jane Smith.jpeg" class="card-img-top team-image" alt="Jane Smith">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Jane Smith</h5>
@@ -111,7 +111,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card text-center">
                         <div class="team-image-container">
-                            <img src="images/team member 3.jpeg" class="card-img-top team-image" alt="Team Member 3">
+                            <img src="images/Mike Johnson.jpeg" class="card-img-top team-image" alt="Mike Johnson">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Mike Johnson</h5>
@@ -128,20 +128,32 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-3 mb-4">
-                    <h2 class="display-4 fw-bold">10K+</h2>
-                    <p>Students Enrolled</p>
+                    <div class="stat-item">
+                        <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                        <h3>5,000+</h3>
+                        <p>Active Students</p>
+                    </div>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <h2 class="display-4 fw-bold">50+</h2>
-                    <p>Courses Available</p>
+                    <div class="stat-item">
+                        <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                        <h3>92%</h3>
+                        <p>Course Completion Rate</p>
+                    </div>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <h2 class="display-4 fw-bold">95%</h2>
-                    <p>Success Rate</p>
+                    <div class="stat-item">
+                        <i class="fas fa-certificate fa-3x text-primary mb-3"></i>
+                        <h3>3,500+</h3>
+                        <p>Certificates Issued</p>
+                    </div>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <h2 class="display-4 fw-bold">24/7</h2>
-                    <p>Support Available</p>
+                    <div class="stat-item">
+                        <i class="fas fa-star fa-3x text-primary mb-3"></i>
+                        <h3>4.8/5</h3>
+                        <p>Student Rating</p>
+                    </div>
                 </div>
             </div>
         </div>
